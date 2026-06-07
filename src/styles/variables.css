@@ -1,0 +1,79 @@
+/* ─── Google Fonts ────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ─── CSS Custom Properties (Dark Theme Default) ──────── */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0b080c;
+  --bg-secondary: #120e16;
+  --bg-surface: #17121c;
+  --bg-elevated: #221b29;
+  --bg-card: #ffffff;
+
+  /* Text */
+  --text-primary: #eae5ec;
+  --text-secondary: #a299a8;
+  --text-muted: #7b7082;
+  --text-card: #222222;
+  --text-card-secondary: #666666;
+
+  /* Accent */
+  --accent: #c2a4ff;
+  --accent-hover: #ab85ff;
+  --accent-subtle: rgba(194, 164, 255, 0.1);
+  --accent-border: rgba(194, 164, 255, 0.3);
+
+  /* Borders */
+  --border-color: rgba(234, 229, 236, 0.25); /* Lilac-white visible border in dark mode */
+  --border-card: #e5e7eb;
+
+  /* Navbar */
+  --navbar-bg: rgba(11, 8, 12, 0.88);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 20px 40px rgba(77, 77, 77, 0.4);
+
+  /* Misc */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --transition: 0.3s ease;
+  --glow-color: rgba(194, 164, 255, 0.06);
+}
+
+/* ─── Light Theme ─────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary: #f9f8fa;
+  --bg-secondary: #f3f0f5;
+  --bg-surface: #ffffff;
+  --bg-elevated: #eae4ef;
+  --bg-card: #ffffff;
+
+  --text-primary: #1c1523;
+  --text-secondary: #584f63;
+  --text-muted: #8e8399;
+  --text-card: #222222;
+  --text-card-secondary: #666666;
+
+  /* Accent overrides for Light Theme */
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-subtle: rgba(139, 92, 246, 0.08);
+  --accent-border: rgba(139, 92, 246, 0.2);
+
+  --border-color: rgba(28, 21, 35, 0.18);
+  --border-card: #e5e7eb;
+
+  --navbar-bg: rgba(249, 248, 250, 0.88);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --glow-color: rgba(139, 92, 246, 0.08);
+}

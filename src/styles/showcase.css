@@ -1,0 +1,89 @@
+/* ─── SHOWCASE LAYOUT (Framer/Sawad Style) ─────────────── */
+.showcase {
+  min-height: 100vh;
+  display: flex;
+  gap: 8.5rem;
+  padding: 10rem 4rem 4rem;
+  position: relative;
+  overflow: visible; /* Required for sticky to work */
+  background: var(--bg-primary);
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.showcase-left {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2.5rem;
+  align-self: flex-start; /* Prevents stretching */
+  height: fit-content;
+  z-index: 10;
+}
+
+.showcase-right {
+  flex: 1;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Spacing between Hero content and About content */
+  z-index: 2;
+  position: relative;
+}
+
+/* Background gradient glows */
+.showcase .about-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+  width: 450px;
+  height: 450px;
+}
+
+.showcase .glow-orange {
+  top: 10%;
+  left: 8%;
+  background: radial-gradient(circle, #c2a4ff 0%, transparent 70%);
+}
+
+.showcase .glow-green {
+  bottom: 10%;
+  right: 8%;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+}
+
+/* Responsive showcase styles */
+@media (max-width: 1024px) {
+  .showcase {
+    flex-direction: column;
+    padding: 8rem 2rem 4rem;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .showcase-left {
+    position: static;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .showcase-right {
+    width: 100%;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    padding: 6rem 1.5rem 3rem;
+    gap: 3rem;
+  }
+
+  .showcase-right {
+    gap: 2rem;
+  }
+}

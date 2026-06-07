@@ -1,0 +1,112 @@
+---
+const row1 = [
+  { name: "Python", icon: "python.svg" },
+  { name: "JavaScript", icon: "javascript.svg" },
+  { name: "TypeScript", icon: "typescript.svg" },
+  { name: "C", icon: "c.svg" },
+  { name: "C++", icon: "cplusplus.svg" },
+  { name: "Kotlin", icon: "kotlin.svg" },
+  { name: "HTML5", icon: "html5.svg" },
+  { name: "CSS3", icon: "css3.svg" },
+  { name: "Bash", icon: "bash.svg" },
+  { name: "React", icon: "react.svg" },
+  { name: "Next.js", icon: "nextjs.svg" },
+  { name: "Bootstrap", icon: "bootstrap.svg" },
+];
+
+const row2 = [
+  { name: "Node.js", icon: "nodejs.svg" },
+  { name: "Django", icon: "django.svg" },
+  { name: "Flask", icon: "flask.svg" },
+  { name: "FastAPI", icon: "fastapi.svg" },
+  { name: "TensorFlow", icon: "tensorflow.svg" },
+  { name: "PyTorch", icon: "pytorch.svg" },
+  { name: "Scikit-learn", icon: "scikitlearn.svg" },
+  { name: "OpenCV", icon: "opencv.svg" },
+  { name: "NumPy", icon: "numpy.svg" },
+  { name: "Tailwind CSS", icon: "tailwindcss.svg" },
+];
+
+const row3 = [
+  { name: "Pandas", icon: "pandas.svg" },
+  { name: "MySQL", icon: "mysql.svg" },
+  { name: "PostgreSQL", icon: "postgresql.svg" },
+  { name: "MongoDB", icon: "mongodb.svg" },
+  { name: "Firebase", icon: "firebase.svg" },
+  { name: "Redis", icon: "redis.svg" },
+  { name: "Docker", icon: "docker.svg" },
+  { name: "Azure", icon: "azure.svg" },
+  { name: "Git", icon: "git.svg" },
+  { name: "GitHub", icon: "github.svg" },
+  { name: "Linux", icon: "linux.svg" },
+  { name: "AWS", icon: "aws.svg" },
+  { name: "VS Code", icon: "vscode.svg" },
+  { name: "Vercel", icon: "vercel.svg" },
+];
+---
+
+<section class="section skills-marquee-section" data-animate="fade-up" id="tech">
+  <h2 class="section-title">TECH <span class="highlight">STACK</span></h2>
+  
+  <div class="skills-marquee-container">
+    <!-- Row 1: Left to Right -->
+    <div class="marquee-row ltr">
+      <div class="marquee-track">
+        {[...row1, ...row1].map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Row 2: Right to Left -->
+    <div class="marquee-row rtl">
+      <div class="marquee-track">
+        {[...row2, ...row2].map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Row 3: Left to Right -->
+    <div class="marquee-row ltr">
+      <div class="marquee-track">
+        {[...row3, ...row3].map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

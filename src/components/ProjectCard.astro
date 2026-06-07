@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  github: string;
+  live?: string;
+  image: string;
+}
+
+const { title, description, tags, github, live, image } = Astro.props;
+import { Github, ExternalLink } from "lucide-astro";
+---
+
+<article class="project-card" data-animate="fade-up">
+  <div class="project-card-image">
+    {image ? (
+      <img src={image} alt={title} class="project-img" />
+    ) : (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1;opacity:0.5;">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+    )}
+  </div>
+
+  <div class="project-card-body">
+    <h3>{title}</h3>
+    <p>{description}</p>
+
+    <div class="project-tags">
+      {tags.map((tag) => (
+        <span class="project-tag">{tag}</span>
+      ))}
+    </div>
+
+    <div class="project-links">
+      <a href={github} target="_blank" rel="noopener" class="project-link project-link-code">
+        <Github size={14} strokeWidth={2} />
+        Code
+      </a>
+      {live && (
+        <a href={live} target="_blank" rel="noopener" class="project-link project-link-live">
+          <ExternalLink size={14} strokeWidth={2} />
+          Live
+        </a>
+      )}
+    </div>
+  </div>
+</article>

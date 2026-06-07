@@ -1,0 +1,42 @@
+---
+import {
+  House,
+  Folder,
+  Wrench,
+  Pencil,
+  User
+} from "lucide-astro";
+import { profile } from "../data/portfolio";
+---
+
+<section class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-logo">{profile.initials}</div>
+
+  <div class="navbar-links">
+    <a href="#home" aria-label="Home">
+      <House size={20} strokeWidth={2} />
+    </a>
+    <a href="#about" aria-label="About">
+      <User size={20} strokeWidth={2} />
+    </a>
+    <a href="#projects" aria-label="Projects">
+      <Folder size={20} strokeWidth={2} />
+    </a>
+    <a href="#tech" aria-label="Skills">
+      <Wrench size={20} strokeWidth={2} />
+    </a>
+    <a href="#contact" aria-label="Contact">
+      <Pencil size={20} strokeWidth={2} />
+    </a>
+  </div>
+
+  <div class="navbar-divider"></div>
+
+  <button
+    class="theme-toggle-btn"
+    id="themeToggleBtn"
+    aria-label="Toggle theme"
+  >
+    <!-- Icon injected by JS -->
+  </button>
+</section>

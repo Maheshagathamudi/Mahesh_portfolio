@@ -1,0 +1,22 @@
+/* 
+ * Global CSS Manifest
+ * Astro will bundle all these files in this exact order.
+ */
+
+/* 1. Variables & Theming */
+@import './variables.css';
+
+/* 2. Base Reset & Setup */
+@import './base.css';
+
+/* 3. Animations & Keyframes */
+@import './animations.css';
+
+/* 4. Layout Components */
+@import './navbar.css';
+@import './hero.css';
+@import './showcase.css';
+@import './about.css';
+@import './projects.css';
+@import './contact.css';
+@import './footer.css';

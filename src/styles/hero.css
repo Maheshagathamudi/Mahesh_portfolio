@@ -1,0 +1,395 @@
+/* ─── PROFILE CARD ────────────────────────── */
+.profile-card {
+  width: 320px;
+  flex-shrink: 0;
+  background: #ffffff;
+  color: #222222;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  align-self: center;
+  border: 1.5px solid rgba(28, 21, 35, 0.18); /* Blackish border in light mode */
+}
+
+[data-theme="dark"] .profile-card {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1.5px solid rgba(234, 229, 236, 0.25); /* Lilac-white border in dark mode */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .profile-card:hover {
+  border-color: rgba(194, 164, 255, 0.5);
+}
+
+/* ─── Rectangular Photo Box ────────────────────────────── */
+.card-photo {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  background: #f3f4f6;
+  overflow: hidden;
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ─── Card Body (Text & Links) ─────────────────────────── */
+.card-body {
+  padding: 2rem 2rem 2.5rem; /* Clean padding, no blur overlay needed */
+  text-align: center;
+  background: transparent; /* Inherits parent background */
+}
+
+.card-body h2 {
+  font-size: 1.5rem;
+  font-weight: 900; /* Extra bold as requested */
+  margin-bottom: 0.75rem;
+  color: #111111;
+}
+
+[data-theme="dark"] .card-body h2 {
+  color: var(--text-primary);
+}
+
+.badge-status {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: #fff3e0;
+  color: #d97706;
+  border: 1px solid #fbbf24;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.bio {
+  color: #555555;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+[data-theme="dark"] .bio {
+  color: var(--text-secondary);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.social-links a.github-link:hover {
+  border-color: #181717;
+  background: rgba(24, 23, 23, 0.05);
+}
+
+.social-links a.linkedin-link:hover {
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.05);
+}
+
+.social-links a.gmail-link:hover {
+  border-color: #ea4335;
+  background: rgba(234, 67, 53, 0.05);
+}
+
+.social-links a.whatsapp-link:hover {
+  border-color: #25d366;
+  background: rgba(37, 211, 102, 0.05);
+}
+
+/* ─── HERO CONTENT (Right Side) ───────────────────────── */
+.hero-content {
+  flex: 1;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 2;
+  position: relative;
+  align-items: flex-start;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  color: var(--text-primary);
+}
+
+.hero-text h1 span {
+  display: block;
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  background: linear-gradient(90deg, var(--accent), #7c3aed, var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin-top: 0.5rem;
+}
+
+/* ─── STATS ───────────────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  gap: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-item p {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+/* ─── FLOATING BADGES (Framer Style) ──────────────────── */
+.floating-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.badge-pill {
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(234, 229, 236, 0.25); /* Light border in dark mode */
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  backdrop-filter: blur(4px);
+  cursor: default;
+  transition: all 0.3s ease;
+  animation: floatBadge var(--float-duration, 6s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+[data-theme="light"] .badge-pill {
+  background: rgba(28, 21, 35, 0.03);
+  border: 1.5px solid rgba(28, 21, 35, 0.18); /* Blackish border in light mode */
+  color: var(--text-secondary);
+}
+
+.badge-pill.large {
+  background: linear-gradient(135deg, rgba(194, 164, 255, 0.1), rgba(124, 58, 237, 0.05));
+  border: 1.5px solid rgba(234, 229, 236, 0.35); /* Visible themed white border in dark mode */
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 0 4px 15px rgba(194, 164, 255, 0.05);
+  animation: floatBadge 7s ease-in-out infinite;
+}
+
+[data-theme="light"] .badge-pill.large {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(124, 58, 237, 0.03));
+  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
+  box-shadow: 0 4px 15px rgba(28, 21, 35, 0.03);
+}
+
+.badge-pill.large.accent-alt {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.05));
+  border: 1.5px solid rgba(234, 229, 236, 0.35); /* Visible themed white border in dark mode */
+  color: #10b981;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.05);
+  animation-delay: 1s;
+}
+
+[data-theme="light"] .badge-pill.large.accent-alt {
+  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
+}
+
+.small-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  backdrop-filter: none;
+  animation: none; /* Container doesn't float, individual items do */
+}
+
+[data-theme="light"] .small-pills {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.small-pills span {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(234, 229, 236, 0.25); /* Visible themed white border in dark mode */
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* Space between icon and text */
+  animation: floatBadge 6s ease-in-out infinite;
+}
+
+[data-theme="light"] .small-pills span {
+  background: rgba(28, 21, 35, 0.03);
+  border: 1.5px solid rgba(28, 21, 35, 0.18); /* Blackish border in light mode */
+}
+
+/* Stagger the floating animation for small pills */
+.small-pills span:nth-child(1) { animation-delay: 0s; }
+.small-pills span:nth-child(2) { animation-delay: 0.5s; }
+.small-pills span:nth-child(3) { animation-delay: 1s; }
+.small-pills span:nth-child(4) { animation-delay: 1.5s; }
+.small-pills span:nth-child(5) { animation-delay: 2s; }
+.small-pills span:nth-child(6) { animation-delay: 2.5s; }
+
+.small-pills span:hover,
+.badge-pill.large:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent);
+}
+
+/* ─── CTA BUTTONS ─────────────────────────────────────── */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.2rem;
+  background: var(--accent);
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(234, 229, 236, 0.25); /* Light border in dark mode */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+[data-theme="light"] .btn-primary {
+  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.2rem;
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(234, 229, 236, 0.25); /* White/light border in dark mode */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+[data-theme="light"] .btn-outline {
+  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ─── HERO RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-content { align-items: center; }
+  .hero-description { max-width: 100%; }
+  .floating-badges { justify-content: center; }
+  .small-pills { justify-content: center; }
+  .hero-stats { justify-content: center; width: auto; }
+  .hero-cta { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .profile-card { width: 100%; max-width: 300px; }
+  .card-photo { height: 280px; }
+  .hero-text h1 { font-size: 2.8rem; letter-spacing: -1px; }
+  .hero-stats { gap: 2rem; }
+  .stat-item h3 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 2.4rem; }
+  .social-links { gap: 0.5rem; }
+  .badge-pill.large { font-size: 0.8rem; padding: 0.6rem 1.2rem; }
+}

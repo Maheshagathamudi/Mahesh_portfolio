@@ -1,0 +1,43 @@
+/* ─── Scroll Animations ───────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate="fade-up"] { transform: translateY(30px); }
+[data-animate="fade-down"] { transform: translateY(-30px); }
+[data-animate="fade-left"] { transform: translateX(-30px); }
+[data-animate="fade-right"] { transform: translateX(30px); }
+[data-animate="scale-up"] { transform: scale(0.95); }
+
+[data-animate].animated {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger children animations */
+.stagger-children > [data-animate]:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > [data-animate]:nth-child(2) { transition-delay: 100ms; }
+.stagger-children > [data-animate]:nth-child(3) { transition-delay: 200ms; }
+.stagger-children > [data-animate]:nth-child(4) { transition-delay: 300ms; }
+.stagger-children > [data-animate]:nth-child(5) { transition-delay: 400ms; }
+.stagger-children > [data-animate]:nth-child(6) { transition-delay: 500ms; }
+.stagger-children > [data-animate]:nth-child(7) { transition-delay: 600ms; }
+.stagger-children > [data-animate]:nth-child(8) { transition-delay: 700ms; }
+
+/* ─── Keyframes ───────────────────────────────────────── */
+@keyframes gradientShift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}

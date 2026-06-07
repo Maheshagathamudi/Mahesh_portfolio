@@ -1,0 +1,148 @@
+---
+import { profile } from "../data/portfolio";
+import { ArrowUpRight } from "lucide-astro";
+---
+
+<section class="section contact-section" id="contact">
+  <div class="section-header" data-animate="fade-up">
+    <h2 class="section-title">CONTACT <span class="highlight">WITH ME</span></h2>
+  </div>
+
+  <div class="contact-wrapper">
+    <!-- Left Column: Stacked Cards -->
+    <div class="contact-left-col" data-animate="fade-right">
+      <!-- Top Card: Connect & Chat -->
+      <div class="contact-connect-card">
+        <div class="connect-card-content">
+          <h3 class="connect-title">Let's connect and chat</h3>
+          <a href={`mailto:${profile.email}`} class="connect-email-link">
+            <span class="connect-email-text">{profile.email}</span>
+            <div class="connect-arrow-circle">
+              <ArrowUpRight size={18} strokeWidth={2.5} />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Card: Floating Social Badges -->
+      <div class="contact-social-card">
+        <div class="floating-pills-container-mini">
+          <!-- Follow Badge -->
+          <div class="cozy-pill-mini badge-follow-mini">
+            <span>FOLLOW ME!</span>
+          </div>
+
+          <!-- Emojis Badge -->
+          <div class="cozy-pill-mini badge-emojis-mini">
+            <span>👀 🤪</span>
+          </div>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="cozy-pill-mini badge-social-mini" aria-label="Instagram">
+            <img src="/icons/instagram.svg" alt="Instagram" width="22" height="22" />
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919392653912" target="_blank" rel="noopener" class="cozy-pill-mini badge-social-mini" aria-label="WhatsApp">
+            <img src="/icons/whatsapp.svg" alt="WhatsApp" width="22" height="22" />
+          </a>
+
+          <!-- Gmail -->
+          <a href={`mailto:${profile.email}`} class="cozy-pill-mini badge-social-mini" aria-label="Gmail">
+            <img src="/icons/gmail.svg" alt="Gmail" width="22" height="22" />
+          </a>
+
+          <!-- LinkedIn -->
+          <a href={profile.linkedin} target="_blank" rel="noopener" class="cozy-pill-mini badge-social-mini" aria-label="LinkedIn">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" width="22" height="22" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Sizzle Project Form Card -->
+    <div class="contact-form-card" data-animate="fade-left">
+      <div class="contact-form-header">
+        <h2>Contact with me to <span class="highlight-sizzle">sizzle</span> your project</h2>
+        <p>Feel free to contact me if having any questions. I'm available for new projects or just for chatting.</p>
+      </div>
+
+      <form class="contact-sizzle-form" id="contactForm">
+        <div class="form-row-sizzle">
+          <input type="text" id="name" name="name" placeholder="Name" required />
+          <input type="email" id="email" name="email" placeholder="Email" required />
+        </div>
+        
+        <div class="form-group-sizzle">
+          <textarea id="message" name="message" placeholder="Work Description..." required></textarea>
+        </div>
+
+        <button type="submit" class="sizzle-submit-btn">Submit</button>
+      </form>
+
+      <!-- Success message -->
+      <div class="form-success-sizzle" id="formSuccess">
+        <h3>✓ Message Sent!</h3>
+        <p>Thanks for reaching out. I'll get back to you soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form Validation & Submission -->
+<script is:inline>
+  function initContactForm() {
+    const form = document.getElementById("contactForm");
+    const success = document.getElementById("formSuccess");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const name = form.querySelector("#name");
+      const email = form.querySelector("#email");
+      const message = form.querySelector("#message");
+
+      // Reset errors
+      name.classList.remove("error");
+      email.classList.remove("error");
+      message.classList.remove("error");
+
+      if (!name.value.trim()) {
+        valid = false;
+        name.classList.add("error");
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        valid = false;
+        email.classList.add("error");
+      }
+
+      if (!message.value.trim()) {
+        valid = false;
+        message.classList.add("error");
+      }
+
+      if (valid) {
+        // Formspree or custom API submission can go here in the future
+        form.style.display = "none";
+        success.classList.add("visible");
+
+        setTimeout(() => {
+          form.reset();
+          form.style.display = "flex";
+          success.classList.remove("visible");
+        }, 5000);
+      }
+    });
+  }
+
+  // Initial call
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactForm);
+  } else {
+    initContactForm();
+  }
+</script>

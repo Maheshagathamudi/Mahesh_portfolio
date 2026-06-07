@@ -1,0 +1,111 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../data/portfolio";
+---
+
+<section class="section projects-section" id="projects">
+  <div class="projects-sticky-container">
+    <div class="projects-inner">
+      <div class="projects-header-inline" data-animate="fade-up">
+        <h2 class="section-title">MY <span class="highlight">PROJECTS</span></h2>
+      </div>
+
+      <!-- Project Track Container -->
+      <div class="projects-track-container" data-animate="fade-up">
+        <div class="projects-track stagger-children">
+          {projects.map((project) => (
+            <div class="project-slide-item">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                github={project.github}
+                live={project.live}
+                image={project.image}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Horizontal Scroll Logic (client-side) -->
+<script is:inline>
+  function initProjectsHorizontalScroll() {
+    const section = document.querySelector(".projects-section");
+    const track = document.querySelector(".projects-track");
+    const trackContainer = document.querySelector(".projects-track-container");
+    const items = document.querySelectorAll(".project-slide-item");
+
+    if (!section || !track || !trackContainer || items.length === 0) return;
+
+    function updateLayout() {
+      const isDesktop = window.innerWidth >= 1025;
+      
+      if (isDesktop) {
+        // Compute pages (exactly 2 cards per row on screen)
+        const numPages = Math.ceil(items.length / 2);
+        // Set height of section to allow scrolling
+        section.style.height = `${Math.max(1, numPages) * 100}vh`;
+      } else {
+        section.style.height = "auto";
+        track.style.transform = "none";
+      }
+    }
+
+    function handleScroll() {
+      if (window.innerWidth < 1025) {
+        track.style.transform = "none";
+        return;
+      }
+
+      const rect = section.getBoundingClientRect();
+      const scrollableHeight = rect.height - window.innerHeight;
+
+      if (scrollableHeight <= 0) {
+        track.style.transform = "none";
+        return;
+      }
+
+      // Calculate scrolled percentage
+      let scrolled = -rect.top;
+      let pct = scrolled / scrollableHeight;
+      pct = Math.max(0, Math.min(1, pct));
+
+      // Compute page transition width
+      const numPages = Math.ceil(items.length / 2);
+      if (numPages <= 1) {
+        track.style.transform = "none";
+        return;
+      }
+
+      const containerWidth = trackContainer.getBoundingClientRect().width;
+      const gap = parseFloat(window.getComputedStyle(track).gap) || 32;
+      const pageTranslateWidth = containerWidth + gap;
+      const maxTranslatePixels = (numPages - 1) * pageTranslateWidth;
+
+      const translateVal = -pct * maxTranslatePixels;
+      track.style.transform = `translateX(${translateVal}px)`;
+    }
+
+    // Event listeners
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", () => {
+      updateLayout();
+      handleScroll();
+    });
+
+    // Run layout initially
+    updateLayout();
+    handleScroll();
+  }
+
+  // Run on DOM load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProjectsHorizontalScroll);
+  } else {
+    initProjectsHorizontalScroll();
+  }
+</script>
