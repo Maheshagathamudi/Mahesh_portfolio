@@ -61,7 +61,7 @@ export const projects = [
     tags: ["React", "Node.js", "Express", "MongoDB"],
     category: "web",
     github: "https://github.com/Maheshagathamudi/ExpenseIQ",
-    live: "https://expenseiq-demo.vercel.app",
+    live: "https://expense-gyupqcpi5-maheshagathamudi-1027s-projects.vercel.app",
     image: "/projects/expenseiq.png",
   },
   {
