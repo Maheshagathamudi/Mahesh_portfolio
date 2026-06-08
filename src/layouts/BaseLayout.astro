@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-const { title = "Agathamudi Mahesh | AWS DevOps Engineer" } = Astro.props;
+const { title = "Agathamudi Mahesh | Software Engineer" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ const { title = "Agathamudi Mahesh | AWS DevOps Engineer" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Agathamudi Mahesh — AWS DevOps Engineer portfolio. Cloud infrastructure, CI/CD, Python, Docker, Kubernetes." />
+    <meta name="description" content="Agathamudi Mahesh — Software Engineer portfolio. Cloud infrastructure, CI/CD, Python, Docker, Kubernetes." />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Prevent flash of wrong theme -->
@@ -125,7 +125,7 @@ const { title = "Agathamudi Mahesh | AWS DevOps Engineer" } = Astro.props;
           lastScroll = currentScroll;
 
           // Active section highlighting
-          const sections = document.querySelectorAll("section[id]");
+          const sections = document.querySelectorAll("#home, #about, #projects, #tech, #contact");
           const navLinks = navbar.querySelectorAll(".navbar-links a");
           let currentSection = "";
 

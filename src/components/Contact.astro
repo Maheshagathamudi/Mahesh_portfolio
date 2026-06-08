@@ -38,7 +38,7 @@ import { ArrowUpRight } from "lucide-astro";
           </div>
 
           <!-- Instagram -->
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="cozy-pill-mini badge-social-mini" aria-label="Instagram">
+          <a href={profile.instagram} target="_blank" rel="noopener" class="cozy-pill-mini badge-social-mini" aria-label="Instagram">
             <img src="/icons/instagram.svg" alt="Instagram" width="22" height="22" />
           </a>
 
@@ -67,7 +67,7 @@ import { ArrowUpRight } from "lucide-astro";
         <p>Feel free to contact me if having any questions. I'm available for new projects or just for chatting.</p>
       </div>
 
-      <form class="contact-sizzle-form" id="contactForm">
+      <form class="contact-sizzle-form" id="contactForm" data-access-key={profile.web3formsKey}>
         <div class="form-row-sizzle">
           <input type="text" id="name" name="name" placeholder="Name" required />
           <input type="email" id="email" name="email" placeholder="Email" required />
@@ -126,15 +126,52 @@ import { ArrowUpRight } from "lucide-astro";
       }
 
       if (valid) {
-        // Formspree or custom API submission can go here in the future
-        form.style.display = "none";
-        success.classList.add("visible");
+        const accessKey = form.getAttribute("data-access-key");
+        const submitBtn = form.querySelector(".sizzle-submit-btn");
+        const originalBtnText = submitBtn.textContent;
 
-        setTimeout(() => {
-          form.reset();
-          form.style.display = "flex";
-          success.classList.remove("visible");
-        }, 5000);
+        if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
+          alert("Please configure your Web3Forms access key in portfolio.ts first!");
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        const formData = new FormData(form);
+        formData.append("access_key", accessKey);
+        formData.append("subject", `New Portfolio Message from ${name.value.trim()}`);
+        formData.append("from_name", name.value.trim());
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        })
+        .then(async (response) => {
+          const res = await response.json();
+          if (response.status === 200) {
+            form.style.display = "none";
+            success.classList.add("visible");
+
+            setTimeout(() => {
+              form.reset();
+              form.style.display = "flex";
+              success.classList.remove("visible");
+            }, 5000);
+          } else {
+            console.error(res);
+            alert(res.message || "Something went wrong. Please try again.");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Network error. Please try again later.");
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        });
       }
     });
   }

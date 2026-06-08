@@ -14,6 +14,9 @@ export const profile = {
   location: "India",
   github: "https://github.com/Maheshagathamudi",
   linkedin: "https://www.linkedin.com/in/maheshagathamudi/",
+  instagram: "https://www.instagram.com/maheshagathamudhi/",
+  resumeUrl: "/Mahesh_Resume.pdf", // Place your resume PDF inside the public folder as Mahesh_Resume.pdf
+  web3formsKey: "4deb6015-18db-47fd-b159-4647557fdcbd", // Get a free key from https://web3forms.com/
 };
 
 export const stats = [
@@ -61,7 +64,7 @@ export const projects = [
     tags: ["React", "Node.js", "Express", "MongoDB"],
     category: "web",
     github: "https://github.com/Maheshagathamudi/ExpenseIQ",
-    live: "https://expense-gyupqcpi5-maheshagathamudi-1027s-projects.vercel.app",
+    live: "https://expense-maheshagathamudi-1027s-projects.vercel.app",
     image: "/projects/expenseiq.png",
   },
   {

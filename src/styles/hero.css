@@ -144,17 +144,15 @@
 }
 
 .hero-text h1 {
-  font-size: clamp(3rem, 6.5vw, 6rem);
-  font-weight: 900;
-  line-height: 0.9;
-  text-transform: uppercase;
-  letter-spacing: -3px;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px; /* Clean and professional spacing */
   color: var(--text-primary);
 }
 
 .hero-text h1 span {
-  display: block;
-  font-size: clamp(3rem, 6.5vw, 6rem);
+  display: inline-block;
   background: linear-gradient(90deg, var(--accent), #7c3aed, var(--accent));
   background-size: 200% auto;
   -webkit-background-clip: text;

@@ -1,6 +1,6 @@
 ---
 import { profile, stats } from "../data/portfolio";
-import { ArrowRight } from "lucide-astro";
+import { ArrowRight, FileText } from "lucide-astro";
 ---
 
 <section class="showcase" id="home">
@@ -55,8 +55,7 @@ import { ArrowRight } from "lucide-astro";
     <div class="hero-content">
       <div class="hero-text" data-animate="fade-up">
         <h1>
-          SOFTWARE
-          <span>ENGINEER</span>
+          Software <span>Engineer</span>
         </h1>
       </div>
 
@@ -95,6 +94,9 @@ import { ArrowRight } from "lucide-astro";
       <div class="hero-cta" data-animate="fade-up">
         <a href="#projects" class="btn-primary">
           View Projects <ArrowRight size={18} strokeWidth={2.5} />
+        </a>
+        <a href={profile.resumeUrl} target="_blank" rel="noopener" class="btn-outline">
+          <FileText size={18} strokeWidth={2} /> Resume
         </a>
         <a href="#contact" class="btn-outline">
           Let's Talk
