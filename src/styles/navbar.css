@@ -74,48 +74,7 @@
   background: var(--accent);
 }
 
-/* Navbar Highlighted Resume Button */
-.navbar-resume-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.95rem;
-  height: 42px;
-  border-radius: 999px !important; /* Pill shape */
-  color: var(--bg-primary) !important;
-  background: var(--accent) !important;
-  font-weight: 700;
-  font-size: 0.8rem;
-  font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 4px 12px rgba(194, 164, 255, 0.35);
-  transition: all var(--transition);
-  text-decoration: none;
-  margin-left: 0.4rem;
-  border: 1px solid var(--accent) !important;
-}
 
-.navbar-resume-btn:hover {
-  transform: translateY(-1px) scale(1.03) !important;
-  box-shadow: 0 6px 16px rgba(194, 164, 255, 0.5);
-  background: #ffffff !important;
-  color: #000000 !important;
-  border-color: #ffffff !important;
-}
-
-[data-theme="light"] .navbar-resume-btn {
-  color: #ffffff !important;
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-}
-
-[data-theme="light"] .navbar-resume-btn:hover {
-  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.45);
-  background: #000000 !important;
-  color: #ffffff !important;
-  border-color: #000000 !important;
-}
 
 .navbar-divider {
   width: 1px;
@@ -151,14 +110,5 @@
   .navbar-logo { display: none; }
   .navbar-links a { width: 38px; height: 38px; }
   .theme-toggle-btn { width: 38px; height: 38px; }
-  .navbar-resume-btn {
-    width: 38px !important;
-    height: 38px !important;
-    padding: 0 !important;
-    margin-left: 0.15rem !important;
-    border-radius: 50% !important;
-  }
-  .navbar-resume-btn .resume-btn-text {
-    display: none !important;
-  }
+
 }

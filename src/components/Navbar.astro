@@ -4,8 +4,7 @@ import {
   Folder,
   Wrench,
   Pencil,
-  User,
-  FileText
+  User
 } from "lucide-astro";
 import { profile } from "../data/portfolio";
 ---
@@ -28,10 +27,6 @@ import { profile } from "../data/portfolio";
     </a>
     <a href="#contact" aria-label="Contact">
       <Pencil size={20} strokeWidth={2} />
-    </a>
-    <a href={profile.resumeUrl} target="_blank" rel="noopener" class="navbar-resume-btn" aria-label="Resume">
-      <FileText size={16} strokeWidth={2.5} />
-      <span class="resume-btn-text">Resume</span>
     </a>
   </div>
 
