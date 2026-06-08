@@ -40,11 +40,16 @@ import { Github, ExternalLink } from "lucide-astro";
         <Github size={14} strokeWidth={2} />
         Code
       </a>
-      {live && (
+      {live ? (
         <a href={live} target="_blank" rel="noopener" class="project-link project-link-live">
           <ExternalLink size={14} strokeWidth={2} />
           Live
         </a>
+      ) : (
+        <span class="project-link project-link-live disabled" aria-disabled="true">
+          <ExternalLink size={14} strokeWidth={2} />
+          Live
+        </span>
       )}
     </div>
   </div>

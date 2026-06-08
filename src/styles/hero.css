@@ -95,8 +95,8 @@
 }
 
 .social-links a {
-  width: 42px;
-  height: 42px;
+  width: 44px; /* Increased from 42px to 44px for WCAG compliance */
+  height: 44px; /* Increased from 42px to 44px for WCAG compliance */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,25 +321,35 @@
   gap: 0.5rem;
   padding: 1rem 2.2rem;
   background: var(--accent);
-  color: #000000;
+  color: var(--bg-primary);
   font-weight: 700;
   font-size: 0.95rem;
   border-radius: 12px;
-  border: 1.5px solid rgba(234, 229, 236, 0.25); /* Light border in dark mode */
+  border: 1.5px solid var(--accent-border);
+  box-shadow: 0 4px 14px rgba(194, 164, 255, 0.22);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   text-decoration: none;
 }
 
 [data-theme="light"] .btn-primary {
-  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
+  color: #ffffff; /* Explicit white text for purple background in light mode */
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.2);
 }
 
 .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(194, 164, 255, 0.35);
   background: #ffffff;
   color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+  border-color: #ffffff;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+  border-color: var(--accent-hover);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
 }
 
 .btn-outline {
@@ -348,24 +358,21 @@
   gap: 0.5rem;
   padding: 1rem 2.2rem;
   background: transparent;
-  color: var(--text-primary);
+  color: var(--text-secondary); /* Softer secondary color */
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 12px;
-  border: 1.5px solid rgba(234, 229, 236, 0.25); /* White/light border in dark mode */
+  border: 1.5px solid var(--border-color);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   text-decoration: none;
-}
-
-[data-theme="light"] .btn-outline {
-  border: 1.5px solid rgba(28, 21, 35, 0.25); /* Blackish border in light mode */
 }
 
 .btn-outline:hover {
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-3px);
+  background: var(--accent-subtle);
 }
 
 /* ─── HERO RESPONSIVE ─────────────────────────────────── */

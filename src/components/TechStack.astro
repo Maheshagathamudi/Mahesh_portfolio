@@ -52,7 +52,23 @@ const row3 = [
     <!-- Row 1: Left to Right -->
     <div class="marquee-row ltr">
       <div class="marquee-track">
-        {[...row1, ...row1].map((skill) => (
+        {row1.map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        {row1.map((skill) => (
           <div class="skill-card">
             <div class="skill-icon-wrapper">
               <img
@@ -72,7 +88,23 @@ const row3 = [
     <!-- Row 2: Right to Left -->
     <div class="marquee-row rtl">
       <div class="marquee-track">
-        {[...row2, ...row2].map((skill) => (
+        {row2.map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        {row2.map((skill) => (
           <div class="skill-card">
             <div class="skill-icon-wrapper">
               <img
@@ -92,7 +124,23 @@ const row3 = [
     <!-- Row 3: Left to Right -->
     <div class="marquee-row ltr">
       <div class="marquee-track">
-        {[...row3, ...row3].map((skill) => (
+        {row3.map((skill) => (
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <img
+                src={`/icons/${skill.icon}`}
+                alt={skill.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </div>
+            <span class="skill-name">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        {row3.map((skill) => (
           <div class="skill-card">
             <div class="skill-icon-wrapper">
               <img

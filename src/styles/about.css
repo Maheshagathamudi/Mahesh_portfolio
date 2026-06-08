@@ -155,8 +155,8 @@
 /* Skills Marquee Styling */
 .skills-marquee-section {
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem !important;
+  padding-top: 8rem; /* Increased top padding from 1rem to 8rem */
+  padding-bottom: 3.5rem !important;
 }
 
 .skills-marquee-section .section-title {
@@ -231,14 +231,14 @@
   animation: marquee-rtl 45s linear infinite;
 }
 
-/* Pause on hover */
-.marquee-track:hover {
+/* Pause all tracks in the row on hover to prevent overlapping/crashing */
+.marquee-row:hover .marquee-track {
   animation-play-state: paused;
 }
 
 @keyframes marquee-ltr {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
@@ -250,7 +250,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -371,5 +371,10 @@
 
   .skills-marquee-container {
     gap: 1.25rem;
+  }
+
+  .skills-marquee-section {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem !important;
   }
 }

@@ -1,6 +1,6 @@
 /* ─── CONTACT SECTION ────────────────────────────────── */
 .contact-section.section {
-  padding: 4rem 2rem 4rem;
+  padding: 9rem 2rem 4rem; /* Increased top padding from 4rem to 9rem for breathing room */
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -190,32 +190,32 @@
 .badge-social-mini[aria-label="Instagram"] {
   top: 42%;
   left: 5%;
-  width: 80px;
-  height: 40px;
+  width: 84px;
+  height: 44px;
   transform: rotate(-10deg);
 }
 
 .badge-social-mini[aria-label="WhatsApp"] {
   top: 44%;
   right: 5%;
-  width: 80px;
-  height: 40px;
+  width: 84px;
+  height: 44px;
   transform: rotate(5deg);
 }
 
 .badge-social-mini[aria-label="Gmail"] {
   bottom: 12%;
   left: 15%;
-  width: 80px;
-  height: 40px;
+  width: 84px;
+  height: 44px;
   transform: rotate(-2deg);
 }
 
 .badge-social-mini[aria-label="LinkedIn"] {
   bottom: 10%;
   right: 18%;
-  width: 80px;
-  height: 40px;
+  width: 84px;
+  height: 44px;
   transform: rotate(8deg);
 }
 
@@ -246,10 +246,10 @@
 
 .contact-form-header h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800; /* Bolder titles */
   line-height: 1.25;
-  color: #ffffff;
+  color: var(--text-primary);
   letter-spacing: -1px;
   margin-bottom: 0.75rem;
 }
@@ -261,19 +261,19 @@
 }
 
 [data-theme="light"] .contact-form-header h2 {
-  color: #1a1e2e;
+  color: var(--text-primary);
 }
 
 .contact-form-header p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   max-width: 550px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 [data-theme="light"] .contact-form-header p {
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 /* Sizzle Form Elements */
@@ -357,33 +357,37 @@
 .sizzle-submit-btn {
   width: 100%;
   padding: 1rem;
-  background: #27272a;
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--bg-primary);
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.98rem;
-  border: none;
+  border: 1px solid var(--accent);
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--accent-subtle);
 }
 
 [data-theme="light"] .sizzle-submit-btn {
-  background: #2d3142;
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
 }
 
 .sizzle-submit-btn:hover {
-  background: #09090b;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(194, 164, 255, 0.35);
 }
 
 [data-theme="light"] .sizzle-submit-btn:hover {
-  background: #1e202c;
-  box-shadow: 0 10px 25px rgba(45, 49, 66, 0.2);
+  background: var(--accent-hover);
+  color: #ffffff;
+  border-color: var(--accent-hover);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
 }
 
 /* Success Message */
@@ -415,7 +419,7 @@
 /* ─── Responsive Overrides ───────────────────────────── */
 @media (max-width: 1024px) {
   .contact-section.section {
-    padding: 3rem 1.5rem 3rem;
+    padding: 7rem 1.5rem 3.5rem; /* Increased top padding from 3rem to 7rem for breathing room */
   }
   .contact-wrapper {
     grid-template-columns: 1fr;

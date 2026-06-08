@@ -7,8 +7,14 @@ import { Github, Linkedin, Mail } from "lucide-astro";
   <div class="footer-container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="footer-logo">{profile.initials}</span>
-        <p class="footer-tagline">Building scalable cloud infrastructure and automated deployment systems.</p>
+        <div class="footer-logo-group">
+          <span class="footer-logo-initials">{profile.initials}</span>
+          <div class="footer-logo-meta">
+            <span class="footer-logo-name">{profile.name}</span>
+            <span class="footer-logo-role">{profile.role}</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Building scalable software applications, intelligent systems, and robust cloud architectures.</p>
       </div>
       
       <div class="footer-socials">

@@ -42,7 +42,7 @@
     justify-content: flex-start;
     width: 100%;
     overflow: hidden;
-    padding: 12vh 5rem 0; /* Increased from 1.5rem to 5rem to add side gaps */
+    padding: 16vh 5rem 0; /* Increased from 12vh to 16vh to add vertical spacing */
   }
 
   .projects-inner {
@@ -166,9 +166,10 @@
 
 .project-card-body h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800; /* Bolder titles */
   margin-bottom: 0.6rem;
   color: var(--text-primary);
+  letter-spacing: -0.3px;
 }
 .project-card-body p {
   color: var(--text-secondary);
@@ -269,6 +270,23 @@
   box-shadow: 0 6px 16px rgba(194, 164, 255, 0.4);
 }
 
+/* Disabled Highlighted Button (Live) */
+.project-link-live.disabled {
+  background: rgba(123, 112, 130, 0.08) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid rgba(234, 229, 236, 0.1) !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+[data-theme="light"] .project-link-live.disabled {
+  background: rgba(28, 21, 35, 0.05) !important;
+  color: var(--text-muted) !important;
+  border-color: rgba(28, 21, 35, 0.08) !important;
+}
+
 /* Light Theme overrides for buttons */
 [data-theme="light"] .project-link-code {
   color: var(--text-primary);
@@ -300,7 +318,7 @@
 /* ─── Mobile / tablet ─────────────────────────────── */
 @media (max-width: 1024px) {
   .projects-section.section {
-    padding: 4rem 3rem !important; /* Increased from 1.5rem to 3rem for tablet spacing */
+    padding: 7rem 3rem 4rem !important; /* Increased top padding from 4rem to 7rem for breathing room */
     max-width: 100% !important;
   }
   .projects-sticky-container {
@@ -329,7 +347,7 @@
 }
 @media (max-width: 768px) {
   .projects-section.section {
-    padding: 4rem 1.5rem !important; /* Restore 1.5rem side padding on mobile */
+    padding: 7rem 1.5rem 4rem !important; /* Increased top padding from 4rem to 7rem for breathing room */
   }
   .projects-track {
     grid-template-columns: 1fr;
