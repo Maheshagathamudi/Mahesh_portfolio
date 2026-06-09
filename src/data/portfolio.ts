@@ -20,8 +20,8 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "+5", label: "Projects Completed" },
-  { value: "+3", label: "Certifications Earned" },
+  { value: "5+", label: "Projects Completed" },
+  { value: "3+", label: "Certifications Earned" },
   { value: "2+", label: "Years Learning" },
 ];
 

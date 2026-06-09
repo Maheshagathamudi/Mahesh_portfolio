@@ -180,12 +180,7 @@
   transform: rotate(-4deg);
 }
 
-.badge-emojis-mini {
-  top: 12%;
-  right: 10%;
-  padding: 0.5rem 0.9rem;
-  transform: rotate(6deg);
-}
+
 
 .badge-social-mini[aria-label="Instagram"] {
   top: 42%;
