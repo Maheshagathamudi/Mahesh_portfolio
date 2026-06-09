@@ -13,6 +13,7 @@
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   align-self: center;
   border: 1.5px solid rgba(28, 21, 35, 0.18); /* Blackish border in light mode */
+  margin: 0 auto;
 }
 
 [data-theme="dark"] .profile-card {
@@ -389,7 +390,14 @@
   .profile-card { width: 100%; max-width: 300px; }
   .card-photo { height: 280px; }
   .hero-text h1 { font-size: 2.8rem; letter-spacing: -1px; }
-  .hero-stats { gap: 2rem; }
+  .hero-stats {
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+  }
   .stat-item h3 { font-size: 2rem; }
 }
 
