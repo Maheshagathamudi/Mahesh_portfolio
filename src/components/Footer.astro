@@ -1,42 +1,65 @@
 ---
 import { profile } from "../data/portfolio";
-import { Github, Linkedin, Mail } from "lucide-astro";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-astro";
 ---
 
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="footer-container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo-group">
+    <div class="footer-main">
+      <section class="footer-brand" aria-label="About Mahesh">
+        <a class="footer-logo-group" href="#home" aria-label={`${profile.name}, back to home`}>
           <span class="footer-logo-initials">{profile.initials}</span>
-          <div class="footer-logo-meta">
+          <span class="footer-logo-meta">
             <span class="footer-logo-name">{profile.name}</span>
             <span class="footer-logo-role">{profile.role}</span>
-          </div>
+          </span>
+        </a>
+        <p class="footer-tagline">
+          I build practical software, cloud infrastructure, and automation that turn complex problems into dependable tools.
+        </p>
+        <span class="footer-status">
+          <span class="footer-status-dot" aria-hidden="true"></span>
+          {profile.tagline}
+        </span>
+      </section>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#tech">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="footer-contact" aria-labelledby="footer-contact-title">
+        <h2 id="footer-contact-title">Let’s connect</h2>
+        <p>Have a project, opportunity, or idea to discuss? I’d be glad to hear from you.</p>
+        <a class="footer-email" href={`mailto:${profile.email}`}>
+          <Mail size={17} strokeWidth={1.8} />
+          <span>{profile.email}</span>
+          <ArrowUpRight size={16} strokeWidth={1.8} />
+        </a>
+        <div class="footer-socials" aria-label="Social profiles">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <Github size={19} strokeWidth={1.8} />
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <Linkedin size={19} strokeWidth={1.8} />
+          </a>
         </div>
-        <p class="footer-tagline">Building scalable software applications, intelligent systems, and robust cloud architectures.</p>
-      </div>
-      
-      <div class="footer-socials">
-        <a href={profile.github} target="_blank" rel="noopener" aria-label="GitHub">
-          <Github size={20} strokeWidth={1.5} />
-        </a>
-        <a href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn">
-          <Linkedin size={20} strokeWidth={1.5} />
-        </a>
-        <a href={`mailto:${profile.email}`} aria-label="Email">
-          <Mail size={20} strokeWidth={1.5} />
-        </a>
-      </div>
+      </section>
     </div>
-    
+
     <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
-      </p>
-      <p class="footer-credit">
-        Handcrafted with <span class="heart">💜</span> and Astro
-      </p>
+      <p class="footer-copy">© {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
+      <div class="footer-meta">
+        <span>{profile.location}</span>
+        <span class="footer-built">Built with Astro</span>
+        <a class="footer-top-link" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
   </div>
 </footer>
