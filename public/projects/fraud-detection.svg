@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#141022"/>
+  <rect x="84" y="76" width="1032" height="608" rx="28" fill="#211933" stroke="#514366" stroke-width="2"/>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="130" y="149" fill="#eee5fb" font-size="32" font-weight="700">Signal</text>
+    <text x="130" y="190" fill="#b6a5cc" font-size="20">Transaction risk monitoring</text>
+    <text x="180" y="291" fill="#d4c6ed" font-size="20">Decision volume</text>
+    <text x="805" y="291" fill="#d4c6ed" font-size="20">Review queue</text>
+  </g>
+  <rect x="130" y="244" width="600" height="362" rx="18" fill="none" stroke="#514366" stroke-width="2"/>
+  <rect x="774" y="244" width="294" height="362" rx="18" fill="none" stroke="#514366" stroke-width="2"/>
+  <path d="M180 366H680M180 435H680M180 504H680" stroke="#514366" stroke-width="2"/>
+  <path d="m180 495 78-38 75 12 77-47 73 15 74-95 50 36 73-52" fill="none" stroke="#bd9cff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#a78bc8">
+    <rect x="807" y="350" width="122" height="11" rx="5"/>
+    <rect x="807" y="426" width="98" height="11" rx="5"/>
+    <rect x="807" y="502" width="112" height="11" rx="5"/>
+  </g>
+  <circle cx="1018" cy="356" r="9" fill="#f6b773"/>
+  <circle cx="1018" cy="432" r="9" fill="#e391bb"/>
+  <circle cx="1018" cy="508" r="9" fill="#f6b773"/>
+</svg>

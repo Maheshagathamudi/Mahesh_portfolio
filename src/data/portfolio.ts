@@ -79,6 +79,17 @@ export const projects = [
     image: "/projects/expenseiq.png",
   },
   {
+    id: 8,
+    title: "Real-Time Fraud Detection Engine",
+    description:
+      "Scores synthetic transactions using explainable amount and velocity rules. A React dashboard shows recent decisions and risk metrics.",
+    tags: ["FastAPI", "React", "TypeScript", "PostgreSQL", "Redis"],
+    category: "ai",
+    github: "https://github.com/Maheshagathamudi/fraud-detection-project",
+    live: "https://mahesh-fraud-engine-dashboard.onrender.com",
+    image: "/projects/fraud-detection.svg",
+  },
+  {
     id: 3,
     title: "AIOS - Autonomous AI Developer",
     description:
